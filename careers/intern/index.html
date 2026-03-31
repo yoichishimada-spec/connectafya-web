@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>インターンシップ | Connect Afya</title>
+  <meta name="description" content="Connect Afyaのインターンシップ。社会人・学生ともに参加可能。ナイロビで圧倒的に違う環境に身を置き、成果を出す経験を。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Connect Afya">
+  <meta property="og:title" content="インターンシップ | Connect Afya">
+  <meta property="og:description" content="圧倒的に違う環境で、成果を出す。ナイロビ発のインターンシップ。">
+  <meta property="og:image" content="/assets/images/hero-lab.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    /* --- Intern LP specific styles --- */
+    .segment-nav {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .segment-nav .btn {
+      min-width: 180px;
+    }
+
+    .numbers-bar {
+      background: var(--color-bg-dark);
+      padding: 40px 0;
+    }
+    .numbers-bar__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    .numbers-bar__value {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--brand-green);
+      display: block;
+      line-height: 1.2;
+    }
+    .numbers-bar__label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+    @media (max-width: 768px) {
+      .numbers-bar__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .numbers-bar__value { font-size: 1.75rem; }
+    }
+
+    .experience-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: box-shadow 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .experience-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--brand-blue);
+    }
+    .experience-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .experience-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    .experience-card p {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    .segment-section {
+      scroll-margin-top: 80px;
+    }
+
+    .persona-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 32px 0;
+    }
+    .persona-card {
+      background: var(--color-bg-cool);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .persona-card__label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+      margin-bottom: 8px;
+    }
+    .persona-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    .persona-card p {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .persona-cards { grid-template-columns: 1fr; }
+    }
+
+    .track-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .track-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .track-card__badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .track-card__badge--science {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+    .track-card__badge--business {
+      background: #d1fae5;
+      color: #065f46;
+    }
+    .track-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .track-card ul {
+      list-style: none;
+    }
+    .track-card li {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      padding: 4px 0 4px 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .track-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand-blue);
+    }
+    @media (max-width: 768px) {
+      .track-cards { grid-template-columns: 1fr; }
+    }
+
+    .conditions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 24px 0;
+    }
+    .condition-box {
+      background: var(--color-bg-cool);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .condition-box h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+    .condition-box ul {
+      list-style: none;
+      font-size: 14px;
+      color: var(--color-text-secondary);
+    }
+    .condition-box li {
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+    .condition-box li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 6px;
+      height: 2px;
+      background: var(--brand-blue);
+    }
+    @media (max-width: 768px) {
+      .conditions { grid-template-columns: 1fr; }
+    }
+
+    .testimonial {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin: 16px 0;
+      position: relative;
+    }
+    .testimonial::before {
+      content: '\201C';
+      font-size: 48px;
+      color: var(--brand-blue);
+      opacity: 0.2;
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .testimonial p {
+      font-size: 15px;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      padding-left: 32px;
+      font-style: italic;
+    }
+    .testimonial__attr {
+      font-size: 13px;
+      color: var(--color-text-light);
+      font-style: normal;
+      margin-top: 12px;
+      padding-left: 32px;
+    }
+
+    .funding-box {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 1px solid #bae6fd;
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 24px 0;
+    }
+    .funding-box h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--brand-blue);
+      margin-bottom: 8px;
+    }
+    .funding-box p {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    .cta-bottom {
+      text-align: center;
+      padding: 20px 0 0;
+    }
+    .cta-bottom__sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 16px;
+    }
+    .cta-bottom__sub a {
+      color: rgba(255,255,255,0.8);
+    }
+    .cta-bottom__sub a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 480px) {
+      .segment-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .segment-nav .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__logo">
+        <a href="/">Connect Afya</a>
+        <span>検査から、アフリカの医療を変える</span>
+      </div>
+      <nav class="site-nav">
+        <a href="/">ホーム</a>
+        <a href="/#business">事業内容</a>
+        <a href="/news/">ニュース</a>
+        <a href="/careers/" class="active">採用</a>
+        <a href="/contact/">お問い合わせ</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero hero--careers hero--with-image">
+    <img src="/assets/images/lab-pipette.png" alt="ナイロビのラボで検査業務を行うスタッフ" class="hero__bg">
+    <div class="container">
+      <h1>圧倒的に違う環境で、成果を出す。</h1>
+      <p>ナイロビの自社ラボと経営の現場。言語も文化も商習慣も違う環境で、自分の頭で考えて動く。超高地トレーニングのようなインターンシップです。</p>
+      <div class="segment-nav">
+        <a href="#professional" class="btn btn--white">社会人の方</a>
+        <a href="#student" class="btn btn--outline" style="border-color: #fff; color: #fff;">学生の方</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 求める人物像 -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">求める人物像</h2>
+      <div class="card-grid fade-in">
+        <div class="experience-card">
+          <h3>自分で調べて、自分で動ける</h3>
+          <p>マニュアルや研修体制はありません。わからないことは自分で調べて、自分で聞きに行ってください。</p>
+        </div>
+        <div class="experience-card">
+          <h3>英語で仕事ができる</h3>
+          <p>ラボスタッフ・クライアントとのやり取りは全て英語です。完璧でなくていいので、臆せず使えること。</p>
+        </div>
+        <div class="experience-card">
+          <h3>成果を出すことにこだわれる</h3>
+          <p>「アフリカに行った」で終わらせない人。期間中に何を残したかが全てです。</p>
+        </div>
+        <div class="experience-card">
+          <h3>無給・自己負担を理解している</h3>
+          <p>報酬は出ません。渡航費・滞在費は自己負担です。その条件で来る意味を自分で説明できる人。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ここでしかできない体験 -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section-title">やること</h2>
+      <p class="section-subtitle">現場に入って手を動かす。得た情報をもとに経営者と議論する。この繰り返しです。</p>
+      <div class="card-grid">
+        <div class="experience-card fade-in">
+          <h3>ラボ業務</h3>
+          <p>検体処理、臨床検査、ISO 15189に基づく品質管理。KENAS認定ラボの実務に入ります。</p>
+        </div>
+        <div class="experience-card fade-in">
+          <h3>リサーチ</h3>
+          <p>AMRサーベイランスのデータ収集・分析、臨床試験支援、研究プロポーザル作成。</p>
+        </div>
+        <div class="experience-card fade-in">
+          <h3>事業開発</h3>
+          <p>製薬企業・研究機関への提案書作成、クライアント折衝、営業活動。</p>
+        </div>
+        <div class="experience-card fade-in">
+          <h3>経営者との議論</h3>
+          <p>現場で得た一次情報を持って、代表と事業戦略を議論する。社員20名なので、議論の結果はすぐ動きに変わります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 社会人インターン -->
+  <section class="section section--alt segment-section" id="professional">
+    <div class="container">
+      <h2 class="section-title">社会人インターン</h2>
+      <p class="section-subtitle">キャリアの転換点を、ナイロビで。</p>
+
+      <div class="persona-cards fade-in">
+        <div class="persona-card">
+          <span class="persona-card__label">Type 1</span>
+          <h4>越境学習・リスキリング</h4>
+          <p>企業に在籍しながら、海外の医療現場で実務経験を積みたい。新しい領域へのキャリア拡張を考えている方。</p>
+        </div>
+        <div class="persona-card">
+          <span class="persona-card__label">Type 2</span>
+          <h4>グローバルヘルス志向</h4>
+          <p>国際機関やNGOを見据え、公衆衛生・医療アクセスの現場経験を必要としている方。</p>
+        </div>
+        <div class="persona-card">
+          <span class="persona-card__label">Type 3</span>
+          <h4>プレMBA・キャリア転換</h4>
+          <p>MBA出願前に実務インパクトのある経験を積みたい。スタートアップの経営に近い距離で働きたい方。</p>
+        </div>
+      </div>
+
+      <h3 class="section-title" style="font-size: 20px; margin-top: 40px;">条件</h3>
+      <div class="conditions">
+        <div class="condition-box">
+          <h4>参加要件</h4>
+          <ul>
+            <li>期間: 最短3ヶ月</li>
+            <li>勤務形態: リモート可</li>
+            <li>報酬: 無給</li>
+            <li>成果物: 修了証明書・推薦状を発行</li>
+          </ul>
+        </div>
+        <div class="condition-box">
+          <h4>業務内容の例</h4>
+          <ul>
+            <li>製薬企業向けの提案書・見積書作成</li>
+            <li>AMRサーベイランスのデータ分析</li>
+            <li>パートナーシップ構築・営業活動</li>
+            <li>グラント申請の調査・資料作成</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 体験談プレースホルダー -->
+      <div class="testimonial fade-in">
+        <p>体験談は準備中です。過去5名の社会人インターンの声を掲載予定。</p>
+        <div class="testimonial__attr">--- 社会人インターン参加者</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 学生インターン -->
+  <section class="section segment-section" id="student">
+    <div class="container">
+      <h2 class="section-title">学生インターン</h2>
+      <p class="section-subtitle">最短3ヶ月。ナイロビ現地勤務。</p>
+
+      <div class="card-grid fade-in">
+        <div class="experience-card">
+          <h3>検体の受付から検査結果まで一気通貫</h3>
+          <p>検体処理、臨床検査、品質管理。ISO 15189認定ラボの業務フローを丸ごと経験します。</p>
+        </div>
+        <div class="experience-card">
+          <h3>AMRサーベイランスと臨床試験</h3>
+          <p>薬剤耐性データの収集・分析、臨床試験の支援業務。研究プロポーザルの作成にも関わります。</p>
+        </div>
+        <div class="experience-card">
+          <h3>製薬企業との事業開発</h3>
+          <p>提案書・見積書の作成、クライアントとの折衝。病院・クリニックへの営業活動も担います。</p>
+        </div>
+        <div class="experience-card">
+          <h3>マーケティングとグラント獲得</h3>
+          <p>BtoB営業戦略の策定・実行、Webサイト改善、グローバルヘルス分野での資金獲得に取り組みます。</p>
+        </div>
+      </div>
+
+      <h3 class="section-title" style="font-size: 20px; margin-top: 40px;">条件</h3>
+      <div class="conditions">
+        <div class="condition-box">
+          <h4>参加要件</h4>
+          <ul>
+            <li>期間: 最短3ヶ月</li>
+            <li>場所: ナイロビ現地</li>
+            <li>報酬: 無給・渡航費滞在費自己負担</li>
+            <li>ビザ: 会社がサポート</li>
+            <li>成果物: 修了証明書・推薦状を発行</li>
+          </ul>
+        </div>
+        <div class="condition-box">
+          <h4>費用の目安</h4>
+          <ul>
+            <li>渡航費 往復約20万円（日本-ナイロビ）</li>
+            <li>家賃 月5-10万円（ルームシェアの場合）</li>
+            <li>生活費 月5-10万円（食費・交通費）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="funding-box fade-in">
+        <p>過去の参加者はトビタテ!留学JAPAN、JICA、大学の海外研修助成金などを活用しています。</p>
+      </div>
+
+      <!-- 体験談プレースホルダー -->
+      <div class="testimonial fade-in">
+        <p>体験談は準備中です。過去4名の学生インターンの声を掲載予定。</p>
+        <div class="testimonial__attr">--- 学生インターン参加者</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- よくある質問 -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section-title">よくある質問</h2>
+      <details class="faq-item">
+        <summary>英語力はどの程度必要ですか？</summary>
+        <div class="faq-answer">
+          <p>業務は基本的に英語です。ラボスタッフ・クライアントとのやり取りは全て英語で行います。代表とは日本語でコミュニケーションできます。目安として、英語での業務メール・簡単なプレゼンができるレベルを想定しています。</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>在籍のまま参加できますか？（社会人向け）</summary>
+        <div class="faq-answer">
+          <p>はい。リモート参加が可能なため、現職に在籍しながらの参加実績があります。業務時間や関わり方は個別にご相談ください。</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>リモートの場合、具体的にどんな業務をしますか？</summary>
+        <div class="faq-answer">
+          <p>事業開発、マーケティング、データ分析、リサーチ、翻訳・ローカライズなどの業務を担当いただきます。ラボ実務を伴う業務は現地勤務が前提です。</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>ナイロビの治安は大丈夫ですか？</summary>
+        <div class="faq-answer">
+          <p>勤務先はナイロビ中心部のオフィスビル（Daykio Plaza）です。通勤はUber/Boltが一般的で、徒歩移動は限定的です。渡航前に安全面のブリーフィングを実施します。</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>医療系のバックグラウンドは必須ですか？</summary>
+        <div class="faq-answer">
+          <p>ラボ・リサーチ系の業務では望ましいですが、事業開発・マーケティング系の業務では不要です。バックグラウンドに応じて業務を調整します。</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>JICAや大学の単位認定プログラムと併用できますか？</summary>
+        <div class="faq-answer">
+          <p>はい。必要な書類（受入証明書、活動報告書など）の発行に対応します。</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>住居はどうなりますか？</summary>
+        <div class="faq-answer">
+          <p>自身で手配いただきます。過去のインターン滞在先の情報やエリアのアドバイスは提供します。</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-bottom">
+        <h2>応募する</h2>
+        <p>以下の3つに回答して送ってください。</p>
+        <div style="text-align: left; max-width: 560px; margin: 20px auto 28px; font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.8;">
+          <p style="margin-bottom: 8px;">1. 直近で、自分で決めて自分で動いた経験を一つ教えてください。</p>
+          <p style="margin-bottom: 8px;">2. 過去に想定外の状況に直面したとき、どう対処しましたか。</p>
+          <p>3. 希望期間と勤務形態（現地 / リモート）。</p>
+        </div>
+        <a href="/contact/" class="btn btn--white">応募フォームへ</a>
+        <p class="cta-bottom__sub">メールでのお問い合わせ: <a href="mailto:info@connectafya.com">info@connectafya.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <p><strong>株式会社Connect Afya</strong></p>
+          <p>兵庫県たつの市揖保町栄78-1</p>
+          <p>ケニア子会社: CA MEDLYNKS (Medlynks By Connect Afya Medical Centre Ltd.)<br>Daykio Plaza, Nairobi</p>
+        </div>
+        <div>
+          <p><strong>サイトマップ</strong></p>
+          <ul>
+            <li><a href="/">ホーム</a></li>
+            <li><a href="/#business">事業内容</a></li>
+            <li><a href="/news/">ニュース</a></li>
+            <li><a href="/careers/">採用</a></li>
+          </ul>
+        </div>
+        <div>
+          <p><strong>お問い合わせ</strong></p>
+          <p><a href="mailto:info@connectafya.com">info@connectafya.com</a></p>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Connect Afya Inc.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var els = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .stagger');
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function(el) { observer.observe(el); });
+      var toggle = document.querySelector('.mobile-toggle');
+      var nav = document.querySelector('.site-nav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() { nav.classList.toggle('open'); });
+      }
+    });
+  </script>
+</body>
+</html>
